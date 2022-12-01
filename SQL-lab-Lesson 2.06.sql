@@ -28,9 +28,9 @@ GROUP BY rating
 HAVING AVG(length) > 120 ;
 
 -- 8. Rank films by length (filter out the rows that have nulls or 0s in length column). 
--- Found this funchtion, I wish this would rank as 1 2 3 4 5 ...
+-- Found this funchtion
 SELECT title, length, 
-RANK () OVER (
+DENSE_RANK () OVER (
 ORDER BY length DESC
 ) AS the_rank 
 FROM film
